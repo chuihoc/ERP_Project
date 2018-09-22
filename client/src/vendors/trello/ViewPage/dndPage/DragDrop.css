@@ -1,0 +1,33 @@
+.dragdrop-container {
+  display: flex;
+  margin-left: 20px;
+}
+.title-drop {
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
+  border-bottom: solid 2px #00b0ff;
+}
+.add-tag {
+  user-select: none;
+  padding: 16px;
+  margin: 0 0 8px;
+  background: white;
+  box-shadow: rgb(224, 224, 224) 1px 2px;
+  height: 74px;
+  font-size: 18px;
+  color: #00b0ff;
+  cursor: pointer;
+}
+.text-content {
+  vertical-align: -webkit-baseline-middle;
+}
+.action-tag {
+  float: right;
+  color: #00b0ff;
+}
+.func-edit-delete {
+  padding: 0 10px 5px 10px;
+}
