@@ -51,7 +51,7 @@ class Drag extends React.Component {
             </span>
             <span className="action-tag">
               <span className="func-edit-delete" onClick={this.handleEditTag}>
-                Edit
+                Detail
               </span>
               <span>|</span>
               <Popconfirm

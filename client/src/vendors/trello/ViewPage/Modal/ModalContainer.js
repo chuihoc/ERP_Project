@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Input, DatePicker } from "antd";
+import { Modal, Input, DatePicker, Tabs, Avatar } from "antd";
 import moment from "moment";
 import DropDown from "../DropDown/DropDown";
 import "./ModalContainer.css";
@@ -46,7 +46,8 @@ class ModalContainer extends React.Component {
                     : 1,
               open: true,
               parent: 1
-            }
+            },
+      currentTab: "1"
     };
   }
 
@@ -81,6 +82,9 @@ class ModalContainer extends React.Component {
 
   handleSaveChangeTag = () => {
     this.props.handleOkTag(this.state.data);
+  };
+  handleChangeTab = key => {
+    this.setState({ currentTab: key });
   };
   render() {
     const { titleModal, visible, handleCloseTag } = this.props;
@@ -135,6 +139,24 @@ class ModalContainer extends React.Component {
             handleSelect={assigneds => this.handleSelectAssigned(assigneds)}
           />
         </div>
+        <Tabs onChange={this.handleChangeTab}>
+          <Tabs.TabPane tab="Comment" key="1">
+            {this.state.currentTab === "1" && (
+              <div>
+                <Avatar icon="user" />
+                <Input
+                  placeholder="Write a comment"
+                  style={{
+                    borderRadius: 30,
+                    width: "calc(100% - 36px)",
+                    marginLeft: 4
+                  }}
+                />
+              </div>
+            )}
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="History" key="2" />
+        </Tabs>
       </Modal>
     );
   }
